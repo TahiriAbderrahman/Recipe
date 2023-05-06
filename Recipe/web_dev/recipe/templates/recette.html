@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title%}
+Recipe | liste des recettes
+{%endblock%}
+{%block content%}
+<div class="card mt-3">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+        <h1>liste de recettes</h1>
+        <a href="{% url 'create_recette'%}" class="btn btn-primary">Ajouter</a>
+<table class="table table-hover">
+    <thead>
+    <th>ID</th><th>Categorie</th>
+    </thead>
+    <tbody>
+    {% for recette in recette %}
+    <tr>
+        <td>{{recette.id}}</td>
+        <td>{{recette.categorie}}</td>
+    </tr>
+    {%endfor%}
+    </tbody>
+</table>
+    </div>
+
+</div>
+
+{%endblock%}
